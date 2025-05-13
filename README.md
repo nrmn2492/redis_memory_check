@@ -4,6 +4,8 @@
 This script connects to a Redis instance and checks memory usage based on the `used_memory_rss` or `used_memory`
 versus the configured `maxmemory`. It calculates percentage usage and exits with status **OK**, **WARN**, or **CRITICAL** accordingly.
 
+This script is suitable for use with monitoring systems such as **Nagios** or **Icinga**, where standard plugin output and exit codes are required.
+
 ## Features
 
 - Connects to a Redis server and fetches memory metrics
@@ -15,13 +17,13 @@ versus the configured `maxmemory`. It calculates percentage usage and exits with
 ## Usage
 
 ```bash
-redis_memory_check.py [options]
+check_redis_memory.py [options]
 
-python3 redis_memory_check.py -s 192.168.1.256 -p 6379 -a default -P Password321 -w 80 -c 90
+python3 check_redis_memory.py -s 192.168.1.256 -p 6379 -a default -P Password321 -w 80 -c 90
 
-python3 redis_memory_check.py -s 192.168.1.256 -p 6379 -a default -P Password321 -w 80 -c 90 --debug=yes
+python3 check_redis_memory.py -s 192.168.1.256 -p 6379 -a default -P Password321 -w 80 -c 90 --debug=yes
 
-python3 redis_memory_check.py --info
+python3 check_redis_memory.py --info
 ```
 
 ### Options

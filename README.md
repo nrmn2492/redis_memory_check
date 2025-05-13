@@ -19,7 +19,7 @@ redis_memory_check.py [options]
 
 python3 redis_memory_check.py -s 192.168.1.256 -p 6379 -a default -P Password321 -w 80 -c 90
 
-python3 redis_memory_check.py -s 192.168.1.256 -p 6379 -a default -P Password321 -w 80 -c 90 --debug
+python3 redis_memory_check.py -s 192.168.1.256 -p 6379 -a default -P Password321 -w 80 -c 90 --debug=yes
 
 python3 redis_memory_check.py --info
 ```

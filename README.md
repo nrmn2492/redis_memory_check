@@ -16,6 +16,8 @@ This script is suitable for use with monitoring systems such as **Nagios** or **
 
 ## Usage
 
+tested: redis 7.0.15
+
 ```bash
 check_redis_memory.py [options]
 

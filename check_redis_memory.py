@@ -20,7 +20,7 @@ def print_info():
 Redis Memory Usage Checker
 --------------------------
 
-This script connects to a Redis instance and checks memory usage based on the `used_memory_rss` or `used_memory`
+This script connects to a Redis instance and checks memory usage based on the `used_memory`
 versus the configured `maxmemory`. It calculates percentage usage and exits with OK/WARN/CRITICAL accordingly.
 
 Options:
@@ -123,7 +123,7 @@ def main():
         sys.exit(EXIT_CRITICAL)
 
     try:
-        used_memory = int(info.get("used_memory_rss") or info["used_memory"])
+        used_memory = int(info.get("used_memory"))
         max_memory = int(info.get("maxmemory", 0))
     except KeyError as e:
         print(f"CRITICAL: Missing memory metrics in Redis INFO: {e}")
